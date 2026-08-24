@@ -1,178 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Midwest Fuel Group</title>
-  <meta name="description" content="Midwest Fuel Group — reliable bulk fuel supply and delivery across the Upper Midwest.">
-  <style>
-    :root {
-      --navy: #0f2740;
-      --navy-2: #16354f;
-      --amber: #e8a13d;
-      --amber-dark: #c9822a;
-      --paper: #f7f5f0;
-      --ink: #22303e;
-      --muted: #5b6b7a;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
-      color: #fff;
-      padding: 1.25rem 6vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .brand {
-      font-size: 1.35rem;
-      letter-spacing: 0.04em;
-      font-weight: bold;
-    }
-    .brand span { color: var(--amber); }
-    nav a {
-      color: #dfe7ee;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 0.95rem;
-    }
-    nav a:hover { color: var(--amber); }
-    .hero {
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, #1d4266 100%);
-      color: #fff;
-      padding: 6rem 6vw 5rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      max-width: 48rem;
-      margin: 0 auto 1.25rem;
-      line-height: 1.15;
-    }
-    .hero p {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 1.15rem;
-      color: #c9d6e2;
-      max-width: 38rem;
-      margin: 0 auto 2.25rem;
-    }
-    .cta {
-      display: inline-block;
-      background: var(--amber);
-      color: var(--navy);
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
-    .cta:hover { background: var(--amber-dark); }
-    .services {
-      padding: 4.5rem 6vw;
-      max-width: 72rem;
-      margin: 0 auto;
-    }
-    .services h2, .contact h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--navy);
-    }
-    .services > p, .contact > p {
-      text-align: center;
-      color: var(--muted);
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      max-width: 40rem;
-      margin: 0 auto 3rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #e3ded4;
-      border-top: 3px solid var(--amber);
-      border-radius: 6px;
-      padding: 1.75rem;
-    }
-    .card h3 { color: var(--navy); margin-bottom: 0.6rem; font-size: 1.15rem; }
-    .card p {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-    .contact {
-      background: var(--navy);
-      color: #fff;
-      padding: 4.5rem 6vw;
-      text-align: center;
-    }
-    .contact h2 { color: #fff; }
-    .contact > p { color: #b7c6d4; }
-    footer {
-      background: #0a1c2f;
-      color: #7d8fa0;
-      text-align: center;
-      padding: 1.5rem 6vw;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 0.85rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midwest Fuel Group | Free Fuel Margin Check</title>
+<meta name="description" content="We check what your fleet really pays for diesel against the daily wholesale rack price. If we don't find savings, you pay nothing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16222f;
+    --navy-deep:#0e1722;
+    --paper:#f5f7f9;
+    --white:#ffffff;
+    --steel:#5c6d7e;
+    --line:#d8dee5;
+    --amber:#f5a300;
+    --amber-dark:#c98600;
+    --dyed:#c8362b;
+    --ink:#1a2530;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+  }
+  body{
+    font-family:'Barlow',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  h1,h2,h3,.display{
+    font-family:'Barlow Condensed','Barlow',sans-serif;
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:.01em;
+    text-transform:uppercase;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px;}
+
+  /* top bar */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy-deep);
+    color:var(--white);
+    border-bottom:3px solid var(--amber);
+  }
+  .topbar .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:12px;padding-bottom:12px;gap:12px;
+  }
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-mark{
+    width:34px;height:34px;background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Barlow Condensed';font-weight:700;font-size:19px;color:var(--navy-deep);
+    clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%);
+  }
+  .logo-name{font-family:'Barlow Condensed';font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em;}
+  .logo-name span{color:var(--amber);}
+  .top-cta{
+    background:var(--amber);color:var(--navy-deep);
+    font-family:'Barlow Condensed';font-weight:700;font-size:16px;
+    text-transform:uppercase;letter-spacing:.05em;
+    padding:9px 16px;text-decoration:none;white-space:nowrap;
+  }
+  .top-cta:hover{background:#ffc23d;}
+
+  /* hero */
+  .hero{background:var(--navy);color:var(--white);overflow:hidden;position:relative;}
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(90deg,transparent 0 88px,rgba(255,255,255,.025) 88px 89px);
+  }
+  .hero .wrap{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:44px;
+    padding-top:64px;padding-bottom:72px;align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
+    color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;
+  }
+  .hero h1{font-size:clamp(38px,5.2vw,58px);margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--amber);}
+  .hero p.lede{font-size:18px;color:#c3ccd6;max-width:44ch;margin-bottom:26px;}
+  .btn{
+    display:inline-block;background:var(--amber);color:var(--navy-deep);
+    font-family:'Barlow Condensed';font-weight:700;font-size:19px;
+    text-transform:uppercase;letter-spacing:.05em;
+    padding:14px 26px;text-decoration:none;border:none;cursor:pointer;
+  }
+  .btn:hover{background:#ffc23d;}
+  .hero-note{font-size:14px;color:#8fa0b1;margin-top:14px;}
+
+  /* calculator card */
+  .calc{
+    background:var(--white);color:var(--ink);
+    padding:26px 26px 30px;
+    border-top:5px solid var(--amber);
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+  }
+  .calc h3{font-size:22px;margin-bottom:4px;}
+  .calc .sub{font-size:14px;color:var(--steel);margin-bottom:20px;}
+  .calc label{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:14px;font-weight:600;margin-bottom:6px;
+  }
+  .calc label .val{font-family:'IBM Plex Mono';font-size:14px;color:var(--navy);}
+  .calc input[type=range]{
+    width:100%;margin-bottom:20px;accent-color:var(--amber);height:28px;
+  }
+  .seg-toggle{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap;}
+  .seg-btn{
+    flex:1;min-width:110px;padding:10px 8px;cursor:pointer;
+    font-family:'Barlow';font-weight:600;font-size:13.5px;
+    background:var(--paper);border:1px solid var(--line);color:var(--steel);
+  }
+  .seg-btn.active{
+    background:var(--navy);border-color:var(--navy);color:var(--white);
+  }
+  .seg-btn:hover:not(.active){border-color:var(--steel);}
+  .calc-result{
+    background:var(--paper);border:1px solid var(--line);
+    padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .calc-result .lbl{font-size:13px;font-weight:600;color:var(--steel);max-width:16ch;line-height:1.3;}
+  .calc-result .num{
+    font-family:'IBM Plex Mono';font-weight:600;font-size:clamp(26px,3vw,34px);
+    color:var(--dyed);white-space:nowrap;
+  }
+  .calc small{display:block;margin-top:12px;font-size:12px;color:var(--steel);line-height:1.4;}
+
+  /* strip */
+  .strip{background:var(--amber);}
+  .strip .wrap{
+    display:flex;flex-wrap:wrap;gap:8px 36px;justify-content:center;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .strip span{
+    font-family:'Barlow Condensed';font-weight:700;font-size:17px;
+    text-transform:uppercase;letter-spacing:.05em;color:var(--navy-deep);
+  }
+
+  /* sections */
+  section{padding:70px 0;}
+  .kicker{
+    font-family:'IBM Plex Mono';font-size:13px;font-weight:600;color:var(--amber-dark);
+    letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;
+  }
+  section h2{font-size:clamp(30px,4vw,42px);margin-bottom:14px;color:var(--navy);}
+  .section-lede{font-size:17px;color:#42505e;max-width:62ch;margin-bottom:38px;}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .step{
+    background:var(--white);border:1px solid var(--line);border-top:4px solid var(--navy);
+    padding:24px 22px 26px;
+  }
+  .step .n{
+    font-family:'IBM Plex Mono';font-weight:600;font-size:13px;color:var(--amber-dark);
+    margin-bottom:10px;display:block;
+  }
+  .step h3{font-size:21px;margin-bottom:10px;color:var(--navy);}
+  .step p{font-size:15px;color:#42505e;}
+
+  /* the gap graphic */
+  .gap-section{background:var(--navy);color:var(--white);}
+  .gap-section h2{color:var(--white);}
+  .gap-section .section-lede{color:#c3ccd6;}
+  .gapbar{margin:34px 0 10px;}
+  .gapbar .bar{
+    display:flex;height:58px;border:1px solid rgba(255,255,255,.25);
+    font-family:'IBM Plex Mono';font-size:12px;font-weight:600;
+  }
+  .gapbar .seg{display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;}
+  .seg.rack{background:#243447;flex:0 0 52%;color:#c3ccd6;}
+  .seg.fair{background:var(--amber);flex:0 0 14%;color:var(--navy-deep);}
+  .seg.creep{background:var(--dyed);flex:1;color:#fff;position:relative;}
+  .gapbar .legend{
+    display:flex;justify-content:space-between;font-size:13px;color:#8fa0b1;margin-top:10px;gap:10px;flex-wrap:wrap;
+  }
+  .legend b{color:var(--white);font-weight:600;}
+  .legend .red b{color:#ff8a80;}
+
+  /* who it's for */
+  .fits{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .fit{
+    background:var(--white);border:1px solid var(--line);padding:18px 20px;
+    display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  }
+  .fit .who{font-weight:600;font-size:16px;}
+  .fit .gal{font-family:'IBM Plex Mono';font-size:13px;color:var(--steel);white-space:nowrap;}
+  .fits-note{margin-top:18px;font-size:15px;color:#42505e;}
+
+  /* guarantee */
+  .guarantee{background:var(--white);border-left:6px solid var(--amber);padding:28px 30px;max-width:760px;}
+  .guarantee h3{font-size:24px;color:var(--navy);margin-bottom:8px;}
+  .guarantee p{font-size:16px;color:#42505e;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .about-grid p{font-size:16px;color:#42505e;margin-bottom:14px;}
+
+  /* form */
+  .check{background:var(--navy-deep);color:var(--white);}
+  .check h2{color:var(--white);}
+  .check .section-lede{color:#c3ccd6;}
+  form{max-width:560px;display:grid;gap:16px;}
+  form label{font-size:14px;font-weight:600;display:grid;gap:6px;}
+  form input,form select{
+    padding:12px 14px;border:1px solid #3a4a5c;background:#182634;color:var(--white);
+    font-family:'Barlow';font-size:15px;width:100%;
+  }
+  form input:focus,form select:focus{outline:2px solid var(--amber);outline-offset:1px;}
+  .form-note{font-size:13px;color:#8fa0b1;}
+
+  footer{background:var(--navy-deep);color:#8fa0b1;font-size:13px;border-top:1px solid #24344a;}
+  footer .wrap{padding-top:22px;padding-bottom:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+
+  :focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+
+  @media(max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px;padding-top:44px;padding-bottom:52px;}
+    .steps{grid-template-columns:1fr;}
+    .fits{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;gap:20px;}
+    section{padding:52px 0;}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="brand">MIDWEST <span>FUEL</span> GROUP</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Fuel that keeps the Midwest moving.</h1>
-    <p>Dependable bulk fuel supply and delivery for farms, fleets, and job sites across the Upper Midwest — on schedule, at a fair price.</p>
-    <a class="cta" href="#contact">Get in Touch</a>
-  </section>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Midwest Fuel Group home">
+      <span class="logo-mark">MF</span>
+      <span class="logo-name">Midwest <span>Fuel</span> Group</span>
+    </a>
+    <a class="top-cta" href="#check">Free margin check</a>
+  </div>
+</header>
 
-  <section class="services" id="services">
-    <h2>What We Deliver</h2>
-    <p>From on-road diesel to seasonal blends, we keep your tanks full and your operation running.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Bulk Diesel &amp; Gasoline</h3>
-        <p>On-road and off-road diesel plus gasoline, delivered in bulk to your tanks on a schedule that fits your operation.</p>
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Fuel cost audits for Upper Midwest fleets</div>
+      <h1>Most businesses haven't looked at their fuel costs in years.<br><em>Your supplier is counting on that.</em></h1>
+      <p class="lede">When nobody's watching, margins drift. A penny here, a penny there, until you're quietly paying thousands more a year than the fleet down the road. We look for you. If your deal is fair, you'll hear that from us and pay nothing. If it's not, you'll finally know what the last few years cost you.</p>
+      <a class="btn" href="#check">Get your free margin check</a>
+      <p class="hero-note">Takes 60 seconds. No obligation, no supplier switch required.</p>
+    </div>
+    <div class="calc" aria-label="Overpayment calculator">
+      <h3>What's the creep costing you?</h3>
+      <p class="sub">Two answers is all it takes.</p>
+      <label for="spend">Diesel spend per year <span class="val" id="spendVal">$400,000</span></label>
+      <input type="range" id="spend" min="100000" max="2000000" step="25000" value="400000">
+      <label style="margin-bottom:8px;">How do you buy most of your fuel?</label>
+      <div class="seg-toggle" id="buyToggle" role="group" aria-label="How you buy fuel">
+        <button type="button" class="seg-btn active" data-lo="0.05" data-hi="0.15">Delivered / cardlock</button>
+        <button type="button" class="seg-btn" data-lo="0.20" data-hi="0.45">Truck stops</button>
+        <button type="button" class="seg-btn" data-lo="0.10" data-hi="0.30">A mix</button>
       </div>
-      <div class="card">
-        <h3>Fleet &amp; Job-Site Fueling</h3>
-        <p>Direct-to-equipment and fleet fueling so your crews start every shift with full tanks and zero downtime.</p>
+      <div class="calc-result">
+        <span class="lbl">Fleets like this are typically overpaying</span>
+        <span class="num" id="result"></span>
       </div>
-      <div class="card">
-        <h3>DEF &amp; Lubricants</h3>
-        <p>Diesel exhaust fluid, oils, and greases from trusted brands, supplied alongside your regular fuel deliveries.</p>
+      <small id="calcNote">Based on the excess supplier margin we most commonly find on delivered and cardlock accounts. Your free margin check replaces this estimate with your real number, from your actual invoices.</small>
+      <a class="btn" href="#check" style="display:block;text-align:center;margin-top:16px;">Find my real number</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip" role="presentation">
+  <div class="wrap">
+    <span>Excavating</span><span>Trucking</span><span>School Bus</span><span>Paving</span><span>Landscaping &amp; Snow</span><span>Towing</span><span>Ag Services</span>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>Three steps. Zero risk.</h2>
+    <p class="section-lede">You don't change how you fuel. You don't have to leave your supplier. You just find out what you're really paying.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="n">STEP 01</span>
+        <h3>Send us your invoices</h3>
+        <p>A few months of fuel invoices is all it takes. We line up every delivery against the published wholesale rack price for that exact day and calculate your supplier's real margin.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 02</span>
+        <h3>We fix the margin</h3>
+        <p>If the margin is fair, we tell you and shake hands. If it's not, we negotiate it down, with your current supplier or with competing quotes. Most fleets keep the same truck showing up, at a better number.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 03</span>
+        <h3>We keep watching</h3>
+        <p>Margins creep back up when nobody's checking. We audit every invoice, every month, against the daily benchmark, and send you a one-page statement showing exactly what you saved.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Let's Talk Fuel</h2>
-    <p>Tell us about your operation and we'll put together a supply plan that works.</p>
-    <a class="cta" href="mailto:info@midwestfuelgroup.com">info@midwestfuelgroup.com</a>
-  </section>
+<section class="gap-section" id="gap">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--amber)">The problem</div>
+    <h2>The creep is invisible on purpose</h2>
+    <p class="section-lede">When your fuel bill goes up, you assume the market moved. Sometimes it did. Sometimes your margin quietly grew, and there's no way to tell the difference without the daily benchmark. That's the gap we close.</p>
+    <div class="gapbar">
+      <div class="bar" role="img" aria-label="Diagram of a delivered diesel price: wholesale rack price, a fair margin, and the excess margin most fleets unknowingly pay.">
+        <div class="seg rack">WHOLESALE RACK PRICE</div>
+        <div class="seg fair">FAIR<br>MARGIN</div>
+        <div class="seg creep">THE CREEP</div>
+      </div>
+      <div class="legend">
+        <span><b>Rack:</b> published daily, tracks the market</span>
+        <span><b>Fair margin:</b> freight + an honest profit</span>
+        <span class="red"><b>The creep:</b> what you pay for not checking</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2026 Midwest Fuel Group. All rights reserved.
-  </footer>
+<section id="fits">
+  <div class="wrap">
+    <div class="kicker">Who it's for</div>
+    <h2>If diesel is a top-five expense, we should talk</h2>
+    <p class="section-lede">We work with fleets across Minnesota, Wisconsin, Iowa and the Dakotas that burn 30,000 or more gallons a year, delivered to yard tanks, drawn at cardlock, or pumped at the truck stop.</p>
+    <div class="fits">
+      <div class="fit"><span class="who">Excavating &amp; sitework contractors</span><span class="gal mono">40k&ndash;150k gal/yr</span></div>
+      <div class="fit"><span class="who">Local &amp; regional trucking (5&ndash;50 trucks)</span><span class="gal mono">80k&ndash;500k gal/yr</span></div>
+      <div class="fit"><span class="who">School bus contractors</span><span class="gal mono">90k&ndash;150k gal/yr</span></div>
+      <div class="fit"><span class="who">Paving, ready-mix &amp; aggregate</span><span class="gal mono">50k+ gal/yr</span></div>
+      <div class="fit"><span class="who">Landscaping, snow &amp; towing</span><span class="gal mono">30k&ndash;80k gal/yr</span></div>
+      <div class="fit"><span class="who">Ag services &amp; grain hauling</span><span class="gal mono">50k+ gal/yr</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cards" style="background:var(--white);">
+  <div class="wrap">
+    <div class="kicker">Layer two</div>
+    <h2>Then we go after the card</h2>
+    <p class="section-lede">Fixing the fuel margin is half the job. How you pay for fuel is the other half, and it leaks in ways nobody ever audits. We recapture all of it.</p>
+    <div class="steps">
+      <div class="step" style="border-top-color:var(--amber);">
+        <h3>Pump price vs. your price</h3>
+        <p>Trucks fueling at retail truck stops are usually paying the cash price when a properly set up cost-plus card would put them 20 to 45 cents a gallon under it, at the same pumps they already use.</p>
+      </div>
+      <div class="step" style="border-top-color:var(--amber);">
+        <h3>Fees nobody reads</h3>
+        <p>Out-of-network charges, transaction fees, report fees, late fee traps. Fuel card statements are built so you won't look. We read every line and get the junk removed or the program replaced.</p>
+      </div>
+      <div class="step" style="border-top-color:var(--amber);">
+        <h3>Rebates and points you never claimed</h3>
+        <p>Per-gallon rebates are negotiable and most fleets never ask. Same with the cashback and points on the cards running the rest of your business. That's your money sitting on the table, and we go get it.</p>
+      </div>
+    </div>
+    <p style="margin-top:22px;font-size:15px;color:#42505e;max-width:62ch;">One thing we do differently: if a card program pays us a referral, you'll know about it, in writing, with the math shown both ways. We only recommend what puts the most money back in your pocket.</p>
+    <a class="btn" href="#check" style="margin-top:20px;">Check my fuel and my cards</a>
+  </div>
+</section>
+
+<section id="guarantee-sec">
+  <div class="wrap">
+    <div class="guarantee">
+      <h3>If we don't find savings, you pay nothing.</h3>
+      <p>No retainers, no hourly bills, no software fees. We're paid a share of savings we can prove, measured against your own invoices and the published daily benchmark, from a baseline that's frozen in writing the day we start. If your supplier is treating you right, you'll get a clean bill of health and a handshake.</p>
+      <a class="btn" href="#check" style="margin-top:20px;">Start my free check</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">Who we are</div>
+    <h2>Built by someone who reads fuel invoices for a living</h2>
+    <div class="about-grid">
+      <div>
+        <p>Midwest Fuel Group was started by Andrew Emberson, a Twin Cities business broker who has spent years valuing and selling fleet-heavy companies: excavators, trucking firms, bus contractors, landscapers.</p>
+        <p>Recasting those financials means reading fuel invoices line by line. And the same thing kept showing up: good operators, sharp on everything else, quietly overpaying on diesel because the wholesale benchmark is invisible to them.</p>
+      </div>
+      <div>
+        <p>This company exists to make that benchmark visible. We're not a fuel supplier and we don't take a nickel from one. We work for the fleet, we put every number on the table, and we disclose exactly how we're paid, always.</p>
+        <p>Based in Minneapolis. Serving fleets across the Upper Midwest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="check" id="check">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--amber)">Free margin check</div>
+    <h2>Find out in 60 seconds</h2>
+    <p class="section-lede">Tell us a little about your operation and we'll follow up for a few recent invoices. You'll get a straight answer either way: a number, or a clean bill of health.</p>
+    <form id="leadForm">
+      <label>Name
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+      <label>Company
+        <input type="text" name="company" required autocomplete="organization">
+      </label>
+      <label>Email or phone
+        <input type="text" name="contact" required>
+      </label>
+      <label>Rough diesel use per year
+        <select name="gallons">
+          <option>Not sure</option>
+          <option>30,000&ndash;75,000 gallons</option>
+          <option>75,000&ndash;150,000 gallons</option>
+          <option>150,000&ndash;300,000 gallons</option>
+          <option>300,000+ gallons</option>
+        </select>
+      </label>
+      <label>How do you buy fuel today?
+        <select name="method">
+          <option>Delivered to yard tanks</option>
+          <option>Cardlock</option>
+          <option>Retail / truck stops</option>
+          <option>A mix</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Request my margin check</button>
+      <p class="form-note">No cost, no obligation, and we never share your information with fuel suppliers.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Midwest Fuel Group &middot; Minneapolis, MN</span>
+    <span class="mono">If we don't find savings, you pay nothing.</span>
+  </div>
+</footer>
+
+<script>
+  const spend = document.getElementById('spend');
+  const spendVal = document.getElementById('spendVal');
+  const result = document.getElementById('result');
+  const calcNote = document.getElementById('calcNote');
+  const segBtns = document.querySelectorAll('.seg-btn');
+  const PRICE = 3.60; // assumed $/gal for gallon estimate
+  let lo = 0.05, hi = 0.15;
+  const notes = {
+    '0.05': 'Based on the excess supplier margin we most commonly find on delivered and cardlock accounts. Your free margin check replaces this estimate with your real number, from your actual invoices.',
+    '0.20': 'Based on the typical spread between cash pump prices and a properly negotiated cost-plus fuel card at the diesel lanes. Your free check uses your actual fueling locations and lanes.',
+    '0.10': 'A blended estimate across delivered margin and retail fueling. Your free margin check replaces this with your real number, from your actual invoices.'
+  };
+  function money(n){
+    return '$' + Math.round(n).toLocaleString();
+  }
+  function update(){
+    const s = parseInt(spend.value,10);
+    spendVal.textContent = money(s);
+    const gallons = s / PRICE;
+    result.innerHTML = money(gallons*lo) + '\u2013' + money(gallons*hi) +
+      '<span style="font-size:.5em;color:var(--steel)"> /yr</span>';
+  }
+  segBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      segBtns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      lo = parseFloat(btn.dataset.lo);
+      hi = parseFloat(btn.dataset.hi);
+      calcNote.textContent = notes[btn.dataset.lo];
+      update();
+    });
+  });
+  spend.addEventListener('input',update);
+  update();
+
+  // In-page anchors: handle with JS so they work inside sandboxed preview frames too
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+  document.getElementById('leadForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const f = new FormData(this);
+    const body = encodeURIComponent(
+      'Name: '+f.get('name')+'\nCompany: '+f.get('company')+'\nContact: '+f.get('contact')+
+      '\nGallons/yr: '+f.get('gallons')+'\nBuying method: '+f.get('method')
+    );
+    window.location.href = 'mailto:andrew@midwestfuelgroup.com?subject='+encodeURIComponent('Free margin check request')+'&body='+body;
+  });
+</script>
 </body>
 </html>
