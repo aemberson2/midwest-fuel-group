@@ -401,6 +401,7 @@
     <h2>Find out in 60 seconds</h2>
     <p class="section-lede">Tell us a little about your operation and we'll follow up for a few recent invoices. You'll get a straight answer either way: a number, or a clean bill of health.</p>
     <form id="leadForm">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label>Name
         <input type="text" name="name" required autocomplete="name">
       </label>
@@ -489,12 +490,42 @@
 
   document.getElementById('leadForm').addEventListener('submit',function(e){
     e.preventDefault();
-    const f = new FormData(this);
-    const body = encodeURIComponent(
-      'Name: '+f.get('name')+'\nCompany: '+f.get('company')+'\nContact: '+f.get('contact')+
-      '\nGallons/yr: '+f.get('gallons')+'\nBuying method: '+f.get('method')
-    );
-    window.location.href = 'mailto:andrew@midwestfuelgroup.com?subject='+encodeURIComponent('Free margin check request')+'&body='+body;
+    const form = this;
+    const f = new FormData(form);
+    if(f.get('_honey')) return; // spam bot filled the hidden field
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    fetch('https://formsubmit.co/ajax/andrew@midwestfuelgroup.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'Free margin check request — midwestfuelgroup.com',
+        _template:'table',
+        name:f.get('name'),
+        company:f.get('company'),
+        contact:f.get('contact'),
+        gallons_per_year:f.get('gallons'),
+        buying_method:f.get('method')
+      })
+    }).then(function(r){
+      if(!r.ok) throw new Error('relay returned '+r.status);
+      return r.json();
+    }).then(function(){
+      form.innerHTML =
+        '<p style="font-size:18px;font-weight:600;">Got it. We’ll be in touch within one business day.</p>'+
+        '<p class="form-note" style="margin-top:8px;">Want to move faster? Email a few recent fuel invoices to '+
+        '<a href="mailto:andrew@midwestfuelgroup.com" style="color:var(--amber)">andrew@midwestfuelgroup.com</a>.</p>';
+    }).catch(function(){
+      // relay unreachable: fall back to the visitor's own mail client so the lead isn't lost
+      const body = encodeURIComponent(
+        'Name: '+f.get('name')+'\nCompany: '+f.get('company')+'\nContact: '+f.get('contact')+
+        '\nGallons/yr: '+f.get('gallons')+'\nBuying method: '+f.get('method')
+      );
+      window.location.href = 'mailto:andrew@midwestfuelgroup.com?subject='+encodeURIComponent('Free margin check request')+'&body='+body;
+      btn.disabled = false;
+      btn.textContent = 'Request my margin check';
+    });
   });
 </script>
 </body>
