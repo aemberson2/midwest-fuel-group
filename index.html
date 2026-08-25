@@ -3,8 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Midwest Fuel Group | Free Fuel Margin Check</title>
-<meta name="description" content="We check what your fleet really pays for diesel against the daily wholesale rack price. If we don't find savings, you pay nothing.">
+<title>Fleet Fuel Cost Audits for Midwest Fleets | Midwest Fuel Group</title>
+<meta name="description" content="Free fuel margin check for fleets in Minnesota, Wisconsin, Iowa and the Dakotas. We audit your diesel invoices against the daily wholesale rack price — if we don't find savings, you pay nothing.">
+<link rel="canonical" href="https://midwestfuelgroup.com/">
+<meta name="theme-color" content="#0e1722">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Midwest Fuel Group">
+<meta property="og:title" content="Fleet Fuel Cost Audits for Midwest Fleets">
+<meta property="og:description" content="Free fuel margin check: we audit your diesel invoices against the daily wholesale rack price. If we don't find savings, you pay nothing.">
+<meta property="og:url" content="https://midwestfuelgroup.com/">
+<meta property="og:image" content="https://midwestfuelgroup.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fleet Fuel Cost Audits for Midwest Fleets">
+<meta name="twitter:description" content="Free fuel margin check: we audit your diesel invoices against the daily wholesale rack price. If we don't find savings, you pay nothing.">
+<meta name="twitter:image" content="https://midwestfuelgroup.com/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -227,6 +241,25 @@
   form input:focus,form select:focus{outline:2px solid var(--amber);outline-offset:1px;}
   .form-note{font-size:13px;color:#8fa0b1;}
 
+  /* faq */
+  .faq{max-width:760px;}
+  .faq details{
+    background:var(--white);border:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .faq summary{
+    cursor:pointer;list-style:none;position:relative;
+    font-weight:600;font-size:16px;padding:16px 46px 16px 20px;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+    font-family:'IBM Plex Mono';font-size:20px;color:var(--amber-dark);
+  }
+  .faq details[open] summary::after{content:"\2013";}
+  .faq details p{
+    padding:0 20px 18px;font-size:15px;color:#42505e;
+  }
   footer{background:var(--navy-deep);color:#8fa0b1;font-size:13px;border-top:1px solid #24344a;}
   footer .wrap{padding-top:22px;padding-bottom:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
 
@@ -417,6 +450,39 @@
   </div>
 </section>
 
+<section id="faq-sec" style="background:var(--white);">
+  <div class="wrap">
+    <div class="kicker">Common questions</div>
+    <h2>Fuel audit FAQ</h2>
+    <div class="faq">
+      <details>
+        <summary>What is a fuel margin check?</summary>
+        <p>We take a few months of your fuel invoices and line every delivery up against the published wholesale rack price for that exact day. The difference between the two is your supplier's margin. If that margin is fair, we tell you so. If it has crept up, we show you exactly what the creep is costing you per year.</p>
+      </details>
+      <details>
+        <summary>What does a fuel cost audit cost?</summary>
+        <p>The margin check is free and there are no retainers, hourly bills, or software fees. We're only paid a share of savings we can prove against your own invoices and the daily benchmark, from a baseline frozen in writing before we start. If we don't find savings, you pay nothing.</p>
+      </details>
+      <details>
+        <summary>Do I have to switch fuel suppliers?</summary>
+        <p>No. Most fleets keep the same truck showing up at a better number. We first negotiate the margin down with your current supplier; competing quotes only come into play if they won't move.</p>
+      </details>
+      <details>
+        <summary>What is the wholesale rack price?</summary>
+        <p>The rack price is the published daily wholesale price of fuel at the regional terminal — the price your supplier actually pays before adding freight and margin. It moves with the market and is the benchmark that makes a fair delivered diesel price verifiable instead of a guess.</p>
+      </details>
+      <details>
+        <summary>Who is this for?</summary>
+        <p>Fleets across Minnesota, Wisconsin, Iowa and the Dakotas that burn roughly 30,000 or more gallons of diesel a year — excavating and sitework contractors, local and regional trucking, school bus operators, paving and ready-mix, landscaping and snow, towing, and ag services. Delivered to yard tanks, drawn at cardlock, or pumped at truck stops.</p>
+      </details>
+      <details>
+        <summary>How do I get started?</summary>
+        <p>Fill out the short form below and we'll follow up for a few recent fuel invoices. You'll get a straight answer either way: a number, or a clean bill of health.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="check" id="check">
   <div class="wrap">
     <div class="kicker" style="color:var(--amber)">Free margin check</div>
@@ -549,6 +615,111 @@
       btn.textContent = 'Request my margin check';
     });
   });
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "Midwest Fuel Group",
+ "url": "https://midwestfuelgroup.com/",
+ "image": "https://midwestfuelgroup.com/og.png",
+ "description": "Fuel cost audits for Midwest fleets. We check what your fleet really pays for diesel against the daily wholesale rack price. If we don't find savings, you pay nothing.",
+ "email": "andrew@midwestfuelgroup.com",
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Minneapolis",
+  "addressRegion": "MN",
+  "addressCountry": "US"
+ },
+ "areaServed": [
+  {
+   "@type": "State",
+   "name": "Minnesota"
+  },
+  {
+   "@type": "State",
+   "name": "Wisconsin"
+  },
+  {
+   "@type": "State",
+   "name": "Iowa"
+  },
+  {
+   "@type": "State",
+   "name": "North Dakota"
+  },
+  {
+   "@type": "State",
+   "name": "South Dakota"
+  }
+ ],
+ "founder": {
+  "@type": "Person",
+  "name": "Andrew Emberson"
+ },
+ "knowsAbout": [
+  "fleet fuel cost audits",
+  "diesel margin analysis",
+  "wholesale rack pricing",
+  "fuel card programs"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is a fuel margin check?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We take a few months of your fuel invoices and line every delivery up against the published wholesale rack price for that exact day. The difference is your supplier's margin. If it's fair, we tell you so; if it has crept up, we show you exactly what the creep is costing you per year."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What does a fuel cost audit cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The margin check is free, with no retainers, hourly bills, or software fees. We're only paid a share of savings we can prove against your own invoices and the daily benchmark. If we don't find savings, you pay nothing."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I have to switch fuel suppliers?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Most fleets keep the same truck showing up at a better number. We first negotiate the margin down with your current supplier; competing quotes only come into play if they won't move."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the wholesale rack price?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The rack price is the published daily wholesale price of fuel at the regional terminal \u2014 the price your supplier actually pays before adding freight and margin. It's the benchmark that makes a fair delivered diesel price verifiable."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Who is this for?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Fleets across Minnesota, Wisconsin, Iowa and the Dakotas burning roughly 30,000 or more gallons of diesel a year \u2014 contractors, trucking, school bus, paving, landscaping and snow, towing, and ag services."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I get started?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Fill out the short form at midwestfuelgroup.com and we'll follow up for a few recent fuel invoices. You'll get a straight answer either way: a number, or a clean bill of health."
+   }
+  }
+ ]
+}
 </script>
 </body>
 </html>
